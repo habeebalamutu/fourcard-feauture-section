@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Four card feature section</title>
+ 
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,400,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: hsl(0, 78%, 62%);
+      --cyan: hsl(180, 62%, 55%);
+      --orange: hsl(34, 97%, 64%);
+      --blue: hsl(212, 86%, 64%);
+      --gray-500: hsl(234, 12%, 34%);
+      --gray-400: hsl(212, 6%, 44%);
+      --white: hsl(0, 0%, 100%);
+      --shadow: 0 8px 24px 0 rgba(44, 62, 80, 0.10);
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 15px;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #fafafa;
+      color: var(--gray-500);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 540px;
+    }
+    .header h1 {
+      font-weight: 200;
+      font-size: 2.2rem;
+      margin: 0;
+      color: var(--gray-500);
+      line-height: 1.2;
+    }
+    .header h1 span {
+      display: block;
+      font-weight: 600;
+      color: var(--gray-500);
+    }
+    .header h1 .bold {
+      color: var(--gray-500);
+      font-weight: 600;
+    }
+    .header h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin: 0 0 1.2rem 0;
+      color: var(--gray-500);
+    }
+    .header p {
+      color: var(--gray-400);
+      font-weight: 400;
+      margin: 1.2rem 0 0 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .feature-card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+      position: relative;
+      overflow: visible;
+    }
+    .feature-card .icon {
+      align-self: flex-end;
+      margin-top: 2rem;
+      width: 64px;
+      height: 64px;
+    }
+    .feature-card h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gray-500);
+    }
+    .feature-card p {
+      margin: 0;
+      color: var(--gray-400);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    /* Card Borders */
+    .feature-supervisor {
+      border-top: 4px solid var(--cyan);
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      align-self: center;
+    }
+    .feature-team {
+      border-top: 4px solid var(--red);
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    .feature-karma {
+      border-top: 4px solid var(--orange);
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    .feature-calculator {
+      border-top: 4px solid var(--blue);
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+      align-self: center;
+    }
+    
+    .feature-team, .feature-karma {
+      min-width: 320px;
+    }
+    .feature-team {
+      margin-bottom: 0;
+    }
+    .feature-karma {
+      margin-top: 0;
+    }
+    
+    @media (max-width: 900px) {
+      .features {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 1.5rem;
+      }
+      .feature-supervisor,
+      .feature-team,
+      .feature-karma,
+      .feature-calculator {
+        grid-column: auto;
+        grid-row: auto;
+        align-self: stretch;
+        min-width: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding-top: 2rem;
+      }
+      .header h1, .header h2 {
+        font-size: 1.5rem;
+      }
+      .features {
+        gap: 1rem;
+      }
+      .feature-card {
+        padding: 1.5rem;
+        min-height: 180px;
+      }
+      .feature-card .icon {
+        width: 48px;
+        height: 48px;
+        margin-top: 1.2rem;
+      }
+    }
+    .attribution { font-size: 11px; text-align: center; margin-top: 2rem; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>
+        Reliable, efficient delivery<br>
+        <span class="bold">Powered by Technology</span>
+      </h1>
+      <p>
+        Our Artificial Intelligence powered tools use millions of project data points<br>
+        to ensure that your project is successful
+      </p>
+    </div>
+    <div class="features">
+      <div class="feature-card feature-supervisor">
+        <h3>Supervisor</h3>
+        <p>Monitors activity to identify project roadblocks</p>
+        <img class="icon" src="./images/icon-supervisor.svg" alt="Supervisor Icon">
+      </div>
+      <div class="feature-card feature-team">
+        <h3>Team Builder</h3>
+        <p>Scans our talent network to create the optimal team for your project</p>
+        <img class="icon" src="./images/icon-team-builder.svg" alt="Team Builder Icon">
+      </div>
+      <div class="feature-card feature-karma">
+        <h3>Karma</h3>
+        <p>Regularly evaluates our talent to ensure quality</p>
+        <img class="icon" src="./images/icon-karma.svg" alt="Karma Icon">
+      </div>
+      <div class="feature-card feature-calculator">
+        <h3>Calculator</h3>
+        <p>Uses data from past projects to provide better delivery estimates</p>
+        <img class="icon" src="./images/icon-calculator.svg" alt="Calculator Icon">
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/habeebalamutu">Habeeb Alamutu</a>.
+    </p>
+  </footer>
+</body>
+</html>
